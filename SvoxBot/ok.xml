@@ -1,0 +1,445 @@
+﻿<model>
+  <node column0="1 unused package with used dependencies">
+    <node column0="Discord.Net (used dependencies: Discord.Net.Core, System.IO.FileSystem, System.IO.FileSystem.Primitives, System.IO.Compression, System.Security.Cryptography.X509Certificates, System.Security.Cryptography.Algorithms, System.Security.Cryptography.Primitives, System.Security.Cryptography.Encoding, System.Globalization.Calendars, Microsoft.Win32.Primitives, System.AppContext, System.Console, System.Net.Sockets, Discord.Net.Rest, Discord.Net.WebSocket, Discord.Net.Commands, Microsoft.Extensions.DependencyInjection, Microsoft.Extensions.DependencyInjection.Abstractions)" />
+  </node>
+  <node column0="80 used references">
+    <node column0="Discord.Net.Commands">
+      <node column0="Discord.Net.Commands (13 of 25 usages shown)">
+        <node column0="(11,25) public class svox : ModuleBase&lt;SocketCommandContext&gt;" />
+        <node column0="(13,10) [Command(&quot;ping&quot;)]" />
+        <node column0="(16,19) await ReplyAsync(&quot;Hello World!&quot;);" />
+        <node column0="(108,10) [Command(&quot;s&quot;)]" />
+        <node column0="(109,40) public async Task svoxCommand([Remainder] string text)" />
+        <node column0="(120,23) await Context.Channel.SendFileAsync(rest + &quot;.wav&quot;);" />
+        <node column0="(124,23) await ReplyAsync(processText(words[0], rest, rest));" />
+        <node column0="(51,17) private CommandService _commands;" />
+        <node column0="(59,29) _commands = new CommandService();" />
+        <node column0="(81,29) await _commands.AddModulesAsync(Assembly.GetEntryAssembly());" />
+        <node column0="(92,25) if (message.HasStringPrefix(&quot;`&quot;,ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))" />
+        <node column0="(96,46) var result = await _commands.ExecuteAsync(context, argPos, _services);" />
+        <node column0="(98,29) if (!result.IsSuccess) { Console.WriteLine(&quot;Nah&quot;); }" />
+      </node>
+    </node>
+    <node column0="Discord.Net.Core">
+      <node column0="Discord.Net.Core (1 of 118 usages shown)">
+        <node column0="(69,48) await _client.LoginAsync(TokenType.Bot, botToken);" />
+      </node>
+    </node>
+    <node column0="Discord.Net.Rest">
+      <node column0="Discord.Net.Rest (1 of 14 usages shown)">
+        <node column0="(69,27) await _client.LoginAsync(TokenType.Bot, botToken);" />
+      </node>
+    </node>
+    <node column0="Discord.Net.WebSocket">
+      <node column0="Discord.Net.WebSocket (13 of 42 usages shown)">
+        <node column0="(11,36) public class svox : ModuleBase&lt;SocketCommandContext&gt;" />
+        <node column0="(120,31) await Context.Channel.SendFileAsync(rest + &quot;.wav&quot;);" />
+        <node column0="(120,39) await Context.Channel.SendFileAsync(rest + &quot;.wav&quot;);" />
+        <node column0="(50,17) private DiscordSocketClient _client;" />
+        <node column0="(58,27) _client = new DiscordSocketClient();" />
+        <node column0="(71,27) await _client.StartAsync();" />
+        <node column0="(79,37) _client.MessageReceived += HandleCommandAsync;" />
+        <node column0="(84,47) private async Task HandleCommandAsync(SocketMessage arg)" />
+        <node column0="(86,34) var message = arg as SocketUserMessage;" />
+        <node column0="(88,44) if (message is null || message.Author.IsBot) return;" />
+        <node column0="(88,51) if (message is null || message.Author.IsBot) return;" />
+        <node column0="(92,93) if (message.HasStringPrefix(&quot;`&quot;,ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))" />
+        <node column0="(94,35) var context = new SocketCommandContext(_client, message);" />
+      </node>
+    </node>
+    <node column0="Microsoft.Extensions.DependencyInjection">
+      <node column0="Microsoft.Extensions.DependencyInjection (2 of 3 usages shown)">
+        <node column0="(60,29) _services = new ServiceCollection()" />
+        <node column0="(63,18) new ServiceCollection() ↵ .AddSingleton(_client) ↵ .AddSingleton(_commands) ↵ .BuildServiceProvider();" />
+      </node>
+    </node>
+    <node column0="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <node column0="Microsoft.Extensions.DependencyInjection.Abstractions (2 of 6 usages shown)">
+        <node column0="(61,18) new ServiceCollection() ↵ .AddSingleton(_client)" />
+        <node column0="(62,18) new ServiceCollection() ↵ .AddSingleton(_client) ↵ .AddSingleton(_commands)" />
+      </node>
+    </node>
+    <node column0="Microsoft.Win32.Primitives">
+      <node column0="Microsoft.Win32.Primitives" />
+    </node>
+    <node column0="NAudio">
+      <node column0="NAudio (9 of 27 usages shown)">
+        <node column0="(24,13) WaveFileWriter waveFileWriter = null;" />
+        <node column0="(29,28) using (WaveFileReader reader = new WaveFileReader(sourceFile))" />
+        <node column0="(34,50) waveFileWriter = new WaveFileWriter(outputFile, reader.WaveFormat);" />
+        <node column0="(34,84) waveFileWriter = new WaveFileWriter(outputFile, reader.WaveFormat);" />
+        <node column0="(39,41) if (!reader.WaveFormat.Equals(waveFileWriter.WaveFormat))" />
+        <node column0="(39,52) if (!reader.WaveFormat.Equals(waveFileWriter.WaveFormat))" />
+        <node column0="(39,74) if (!reader.WaveFormat.Equals(waveFileWriter.WaveFormat))" />
+        <node column0="(46,47) while ((read = reader.Read(buffer, 0, buffer.Length)) &gt; 0)" />
+        <node column0="(48,44) waveFileWriter.WriteData(buffer, 0, read);" />
+      </node>
+    </node>
+    <node column0="System.AppContext">
+      <node column0="System.AppContext" />
+    </node>
+    <node column0="System.Console">
+      <node column0="System.Console" />
+    </node>
+    <node column0="System.Globalization.Calendars">
+      <node column0="System.Globalization.Calendars" />
+    </node>
+    <node column0="System.IO.Compression">
+      <node column0="System.IO.Compression" />
+    </node>
+    <node column0="System.IO.FileSystem">
+      <node column0="System.IO.FileSystem" />
+    </node>
+    <node column0="System.IO.FileSystem.Primitives">
+      <node column0="System.IO.FileSystem.Primitives" />
+    </node>
+    <node column0="System.Net.Sockets">
+      <node column0="System.Net.Sockets" />
+    </node>
+    <node column0="System.Security.Cryptography.Algorithms">
+      <node column0="System.Security.Cryptography.Algorithms" />
+    </node>
+    <node column0="System.Security.Cryptography.Encoding">
+      <node column0="System.Security.Cryptography.Encoding" />
+    </node>
+    <node column0="System.Security.Cryptography.Primitives">
+      <node column0="System.Security.Cryptography.Primitives" />
+    </node>
+    <node column0="System.Security.Cryptography.X509Certificates">
+      <node column0="System.Security.Cryptography.X509Certificates" />
+    </node>
+    <node column0="mscorlib (85 of 440 usages shown)">
+      <node column0="(18,29) m.Result = (IntPtr)(HT_CAPTION);" />
+      <node column0="(25,55) private void applyButton_Click(object sender, EventArgs e)" />
+      <node column0="(28,15) File.WriteAllText(&quot;token.txt&quot;, token);" />
+      <node column0="(31,48) private void Form1_Load(object sender, EventArgs e)" />
+      <node column0="(36,55) private void closeButton_Click(object sender, EventArgs e)" />
+      <node column0="(38,32) System.Environment.Exit(0);" />
+      <node column0="(41,51) private void button1_Click(object sender, EventArgs e)" />
+      <node column0="(18,28) components.Dispose();" />
+      <node column0="(59,50) this.applyButton.Click += new System.EventHandler(this.applyButton_Click);" />
+      <node column0="(72,50) this.closeButton.Click += new System.EventHandler(this.closeButton_Click);" />
+      <node column0="(76,72) this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject(&quot;pictureBox1.Image&quot;)));" />
+      <node column0="(95,46) this.button1.Click += new System.EventHandler(this.button1_Click);" />
+      <node column0="(110,58) this.Icon = ((System.Drawing.Icon)(resources.GetObject(&quot;$this.Icon&quot;)));" />
+      <node column0="(113,37) this.Load += new System.EventHandler(this.Form1_Load);" />
+      <node column0="(14,22) public async Task Test()" />
+      <node column0="(16,13) await ReplyAsync(&quot;Hello World!&quot;);" />
+      <node column0="(16,13) await ReplyAsync(&quot;Hello World!&quot;);" />
+      <node column0="(21,59) public static void Concatenate(string outputFile, IEnumerable&lt;string&gt; sourceFiles)" />
+      <node column0="(27,17) foreach (string sourceFile in sourceFiles)" />
+      <node column0="(27,17) foreach (string sourceFile in sourceFiles)" />
+      <node column0="(27,17) foreach (string sourceFile in sourceFiles)" />
+      <node column0="(41,43) throw new InvalidOperationException(&quot;Can't concatenate WAV Files that don't share the same format&quot;);" />
+      <node column0="(46,70) while ((read = reader.Read(buffer, 0, buffer.Length)) &gt; 0)" />
+      <node column0="(57,36) waveFileWriter.Dispose();" />
+      <node column0="(69,37) string[] words = phrase.Split(' ');" />
+      <node column0="(74,13) foreach (string file in words)" />
+      <node column0="(74,13) foreach (string file in words)" />
+      <node column0="(74,13) foreach (string file in words)" />
+      <node column0="(79,27) if (!File.Exists(words[count]))" />
+      <node column0="(93,17) List&lt;string&gt; list = new List&lt;string&gt;(words);" />
+      <node column0="(94,17) IEnumerable&lt;string&gt; input = list;" />
+      <node column0="(109,22) public async Task svoxCommand([Remainder] string text)" />
+      <node column0="(112,35) string[] words = text.Split(' ');" />
+      <node column0="(114,32) string rest = text.Replace(words[0] + &quot; &quot;, &quot;&quot;);" />
+      <node column0="(120,17) await Context.Channel.SendFileAsync(rest + &quot;.wav&quot;);" />
+      <node column0="(120,17) await Context.Channel.SendFileAsync(rest + &quot;.wav&quot;);" />
+      <node column0="(124,17) await ReplyAsync(processText(words[0], rest, rest));" />
+      <node column0="(124,17) await ReplyAsync(processText(words[0], rest, rest));" />
+      <node column0="(21,10) [STAThread]" />
+      <node column0="(25,23) if (!File.Exists(&quot;token.txt&quot;))" />
+      <node column0="(33,45) new Program().RunBotAsync().GetAwaiter().GetResult();" />
+      <node column0="(33,58) new Program().RunBotAsync().GetAwaiter().GetResult();" />
+      <node column0="(40,58) new Thread(() =&gt; new SvoxBot().ShowDialog()).Start();" />
+      <node column0="(52,17) private IServiceProvider _services;" />
+      <node column0="(54,22) public async Task RunBotAsync()" />
+      <node column0="(56,32) string token = File.ReadAllText(&quot;token.txt&quot;);" />
+      <node column0="(67,13) await RegisterCommandsAsync();" />
+      <node column0="(67,13) await RegisterCommandsAsync();" />
+      <node column0="(69,13) await _client.LoginAsync(TokenType.Bot, botToken);" />
+      <node column0="(69,13) await _client.LoginAsync(TokenType.Bot, botToken);" />
+      <node column0="(71,13) await _client.StartAsync();" />
+      <node column0="(71,13) await _client.StartAsync();" />
+      <node column0="(73,13) await Task.Delay(-1);" />
+      <node column0="(73,13) await Task.Delay(-1);" />
+      <node column0="(77,22) public async Task RegisterCommandsAsync()" />
+      <node column0="(81,13) await _commands.AddModulesAsync(Assembly.GetEntryAssembly());" />
+      <node column0="(81,13) await _commands.AddModulesAsync(Assembly.GetEntryAssembly());" />
+      <node column0="(81,54) await _commands.AddModulesAsync(Assembly.GetEntryAssembly());" />
+      <node column0="(84,23) private async Task HandleCommandAsync(SocketMessage arg)" />
+      <node column0="(96,30) var result = await _commands.ExecuteAsync(context, argPos, _services);" />
+      <node column0="(96,30) var result = await _commands.ExecuteAsync(context, argPos, _services);" />
+      <node column0="(98,50) if (!result.IsSuccess) { Console.WriteLine(&quot;Nah&quot;); }" />
+      <node column0="(8,12) [assembly: AssemblyTitle(&quot;SvoxBot&quot;)]" />
+      <node column0="(9,12) [assembly: AssemblyDescription(&quot;&quot;)]" />
+      <node column0="(10,12) [assembly: AssemblyConfiguration(&quot;&quot;)]" />
+      <node column0="(11,12) [assembly: AssemblyCompany(&quot;&quot;)]" />
+      <node column0="(12,12) [assembly: AssemblyProduct(&quot;SvoxBot&quot;)]" />
+      <node column0="(13,12) [assembly: AssemblyCopyright(&quot;Copyright ©  2018&quot;)]" />
+      <node column0="(14,12) [assembly: AssemblyTrademark(&quot;&quot;)]" />
+      <node column0="(15,12) [assembly: AssemblyCulture(&quot;&quot;)]" />
+      <node column0="(20,12) [assembly: ComVisible(false)]" />
+      <node column0="(23,12) [assembly: Guid(&quot;95371dd0-a6ef-4496-bb71-fe8a8240efa1&quot;)]" />
+      <node column0="(35,12) [assembly: AssemblyVersion(&quot;1.0.0.0&quot;)]" />
+      <node column0="(36,12) [assembly: AssemblyFileVersion(&quot;1.0.0.0&quot;)]" />
+      <node column0="(23,33) [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]" />
+      <node column0="(24,46) [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]" />
+      <node column0="(28,49) private static global::System.Resources.ResourceManager resourceMan;" />
+      <node column0="(30,53) private static global::System.Globalization.CultureInfo resourceCulture;" />
+      <node column0="(32,50) [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute(&quot;Microsoft.Performance&quot;, &quot;CA1811:AvoidUncalledPrivateCode&quot;)]" />
+      <node column0="(41,50) internal static global::System.Resources.ResourceManager ResourceManager" />
+      <node column0="(47,46) global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager(&quot;SvoxBot.Properties.Resources&quot;, typeof(Resources).Assembly);" />
+      <node column0="(47,164) global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager(&quot;SvoxBot.Properties.Resources&quot;, typeof(Resources).Assembly);" />
+      <node column0="(59,54) internal static global::System.Globalization.CultureInfo Culture" />
+      <node column0="(15,46) [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]" />
+      <node column0="(4,46) [assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(&quot;.NETFramework,Version=v4.6.1&quot;, FrameworkDisplayName = &quot;.NET Framework 4.6.1&quot;)]" />
+    </node>
+    <node column0="System (15 of 292 usages shown)">
+      <node column0="(8,39) private System.ComponentModel.IContainer components = null;" />
+      <node column0="(31,35) System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SvoxBot));" />
+      <node column0="(37,76) ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();" />
+      <node column0="(114,76) ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();" />
+      <node column0="(22,38) [global::System.CodeDom.Compiler.GeneratedCodeAttribute(&quot;System.Resources.Tools.StronglyTypedResourceBuilder&quot;, &quot;4.0.0.0&quot;)]" />
+      <node column0="(40,40) [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]" />
+      <node column0="(40,116) [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]" />
+      <node column0="(58,40) [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]" />
+      <node column0="(58,116) [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]" />
+      <node column0="(16,38) [global::System.CodeDom.Compiler.GeneratedCodeAttribute(&quot;Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator&quot;, &quot;11.0.0.0&quot;)]" />
+      <node column0="(17,75) internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase" />
+      <node column0="(20,92) private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));" />
+      <node column0="(20,116) private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));" />
+      <node column0="(2,7) using System;" />
+      <node column0="(3,14) using System.Reflection;" />
+    </node>
+    <node column0="System.Collections" />
+    <node column0="System.Collections.Concurrent" />
+    <node column0="System.ComponentModel" />
+    <node column0="System.ComponentModel.EventBasedAsync" />
+    <node column0="System.Core" />
+    <node column0="System.Diagnostics.Contracts" />
+    <node column0="System.Diagnostics.Debug" />
+    <node column0="System.Diagnostics.Tools" />
+    <node column0="System.Diagnostics.Tracing" />
+    <node column0="System.Drawing (29 of 81 usages shown)">
+      <node column0="(42,60) this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(70)))), ((int)(((byte)(55)))));" />
+      <node column0="(44,60) this.textBox1.ForeColor = System.Drawing.Color.White;" />
+      <node column0="(45,57) this.textBox1.Location = new System.Drawing.Point(14, 308);" />
+      <node column0="(47,53) this.textBox1.Size = new System.Drawing.Size(198, 20);" />
+      <node column0="(52,63) this.applyButton.ForeColor = System.Drawing.Color.White;" />
+      <node column0="(53,60) this.applyButton.Location = new System.Drawing.Point(15, 334);" />
+      <node column0="(55,56) this.applyButton.Size = new System.Drawing.Size(197, 23);" />
+      <node column0="(63,63) this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(64,56) this.closeButton.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(64,103) this.closeButton.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(64,140) this.closeButton.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(65,63) this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));" />
+      <node column0="(66,60) this.closeButton.Location = new System.Drawing.Point(188, 12);" />
+      <node column0="(68,56) this.closeButton.Size = new System.Drawing.Size(25, 25);" />
+      <node column0="(76,55) this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject(&quot;pictureBox1.Image&quot;)));" />
+      <node column0="(77,60) this.pictureBox1.Location = new System.Drawing.Point(12, 66);" />
+      <node column0="(79,56) this.pictureBox1.Size = new System.Drawing.Size(200, 200);" />
+      <node column0="(86,59) this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(87,52) this.button1.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(87,99) this.button1.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(87,136) this.button1.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(88,59) this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));" />
+      <node column0="(89,56) this.button1.Location = new System.Drawing.Point(157, 12);" />
+      <node column0="(91,52) this.button1.Size = new System.Drawing.Size(25, 25);" />
+      <node column0="(99,59) this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);" />
+      <node column0="(101,51) this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(102,50) this.ClientSize = new System.Drawing.Size(225, 375);" />
+      <node column0="(108,51) this.ForeColor = System.Drawing.Color.Crimson;" />
+      <node column0="(110,42) this.Icon = ((System.Drawing.Icon)(resources.GetObject(&quot;$this.Icon&quot;)));" />
+    </node>
+    <node column0="System.Dynamic.Runtime" />
+    <node column0="System.Globalization" />
+    <node column0="System.IO" />
+    <node column0="System.Net.NetworkInformation" />
+    <node column0="System.Net.Primitives" />
+    <node column0="System.Net.Requests" />
+    <node column0="System.Net.WebHeaderCollection" />
+    <node column0="System.ObjectModel" />
+    <node column0="System.Reflection" />
+    <node column0="System.Reflection.Emit" />
+    <node column0="System.Reflection.Emit.ILGeneration" />
+    <node column0="System.Reflection.Emit.Lightweight" />
+    <node column0="System.Reflection.Extensions" />
+    <node column0="System.Reflection.Primitives" />
+    <node column0="System.Resources.ResourceManager" />
+    <node column0="System.Runtime" />
+    <node column0="System.Runtime.Extensions" />
+    <node column0="System.Runtime.Handles" />
+    <node column0="System.Runtime.InteropServices" />
+    <node column0="System.Runtime.InteropServices.WindowsRuntime" />
+    <node column0="System.Runtime.Serialization.Primitives" />
+    <node column0="System.Security.Principal" />
+    <node column0="System.Text.Encoding" />
+    <node column0="System.Text.Encoding.Extensions" />
+    <node column0="System.Text.RegularExpressions" />
+    <node column0="System.Threading" />
+    <node column0="System.Threading.Tasks" />
+    <node column0="System.Threading.Tasks.Parallel" />
+    <node column0="System.Threading.Timer" />
+    <node column0="System.Windows.Forms (90 of 571 usages shown)">
+      <node column0="(7,36) public partial class SvoxBot : Form" />
+      <node column0="(14,45) protected override void WndProc(ref Message m)" />
+      <node column0="(16,18) base.WndProc(ref m);" />
+      <node column0="(17,19) if (m.Msg == WM_NCHITTEST)" />
+      <node column0="(18,19) m.Result = (IntPtr)(HT_CAPTION);" />
+      <node column0="(27,34) string token = textBox1.Text;" />
+      <node column0="(43,18) this.WindowState = FormWindowState.Minimized;" />
+      <node column0="(43,48) this.WindowState = FormWindowState.Minimized;" />
+      <node column0="(20,18) base.Dispose(disposing);" />
+      <node column0="(32,54) this.textBox1 = new System.Windows.Forms.TextBox();" />
+      <node column0="(33,57) this.applyButton = new System.Windows.Forms.Button();" />
+      <node column0="(34,57) this.closeButton = new System.Windows.Forms.Button();" />
+      <node column0="(35,57) this.pictureBox1 = new System.Windows.Forms.PictureBox();" />
+      <node column0="(36,53) this.button1 = new System.Windows.Forms.Button();" />
+      <node column0="(38,18) this.SuspendLayout();" />
+      <node column0="(42,27) this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(70)))), ((int)(((byte)(55)))));" />
+      <node column0="(43,27) this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;" />
+      <node column0="(43,74) this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;" />
+      <node column0="(44,27) this.textBox1.ForeColor = System.Drawing.Color.White;" />
+      <node column0="(45,27) this.textBox1.Location = new System.Drawing.Point(14, 308);" />
+      <node column0="(46,27) this.textBox1.Name = &quot;textBox1&quot;;" />
+      <node column0="(47,27) this.textBox1.Size = new System.Drawing.Size(198, 20);" />
+      <node column0="(48,27) this.textBox1.TabIndex = 0;" />
+      <node column0="(52,30) this.applyButton.ForeColor = System.Drawing.Color.White;" />
+      <node column0="(53,30) this.applyButton.Location = new System.Drawing.Point(15, 334);" />
+      <node column0="(54,30) this.applyButton.Name = &quot;applyButton&quot;;" />
+      <node column0="(55,30) this.applyButton.Size = new System.Drawing.Size(197, 23);" />
+      <node column0="(56,30) this.applyButton.TabIndex = 2;" />
+      <node column0="(57,30) this.applyButton.Text = &quot;Save Token&quot;;" />
+      <node column0="(58,30) this.applyButton.UseVisualStyleBackColor = true;" />
+      <node column0="(59,36) this.applyButton.Click += new System.EventHandler(this.applyButton_Click);" />
+      <node column0="(63,30) this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(64,30) this.closeButton.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(65,30) this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));" />
+      <node column0="(66,30) this.closeButton.Location = new System.Drawing.Point(188, 12);" />
+      <node column0="(67,30) this.closeButton.Name = &quot;closeButton&quot;;" />
+      <node column0="(68,30) this.closeButton.Size = new System.Drawing.Size(25, 25);" />
+      <node column0="(69,30) this.closeButton.TabIndex = 3;" />
+      <node column0="(70,30) this.closeButton.Text = &quot;X&quot;;" />
+      <node column0="(71,30) this.closeButton.UseVisualStyleBackColor = false;" />
+      <node column0="(72,36) this.closeButton.Click += new System.EventHandler(this.closeButton_Click);" />
+      <node column0="(76,30) this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject(&quot;pictureBox1.Image&quot;)));" />
+      <node column0="(77,30) this.pictureBox1.Location = new System.Drawing.Point(12, 66);" />
+      <node column0="(78,30) this.pictureBox1.Name = &quot;pictureBox1&quot;;" />
+      <node column0="(79,30) this.pictureBox1.Size = new System.Drawing.Size(200, 200);" />
+      <node column0="(80,30) this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;" />
+      <node column0="(80,81) this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;" />
+      <node column0="(81,30) this.pictureBox1.TabIndex = 4;" />
+      <node column0="(82,30) this.pictureBox1.TabStop = false;" />
+      <node column0="(86,26) this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(87,26) this.button1.Font = new System.Drawing.Font(&quot;Arial&quot;, 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));" />
+      <node column0="(88,26) this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));" />
+      <node column0="(89,26) this.button1.Location = new System.Drawing.Point(157, 12);" />
+      <node column0="(90,26) this.button1.Name = &quot;button1&quot;;" />
+      <node column0="(91,26) this.button1.Size = new System.Drawing.Size(25, 25);" />
+      <node column0="(92,26) this.button1.TabIndex = 5;" />
+      <node column0="(93,26) this.button1.Text = &quot;-&quot;;" />
+      <node column0="(94,26) this.button1.UseVisualStyleBackColor = false;" />
+      <node column0="(95,32) this.button1.Click += new System.EventHandler(this.button1_Click);" />
+      <node column0="(99,18) this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);" />
+      <node column0="(100,18) this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;" />
+      <node column0="(100,69) this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;" />
+      <node column0="(101,18) this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(68)))));" />
+      <node column0="(102,18) this.ClientSize = new System.Drawing.Size(225, 375);" />
+      <node column0="(103,18) this.Controls.Add(this.button1);" />
+      <node column0="(103,27) this.Controls.Add(this.button1);" />
+      <node column0="(104,18) this.Controls.Add(this.pictureBox1);" />
+      <node column0="(104,27) this.Controls.Add(this.pictureBox1);" />
+      <node column0="(105,18) this.Controls.Add(this.closeButton);" />
+      <node column0="(105,27) this.Controls.Add(this.closeButton);" />
+      <node column0="(106,18) this.Controls.Add(this.applyButton);" />
+      <node column0="(106,27) this.Controls.Add(this.applyButton);" />
+      <node column0="(107,18) this.Controls.Add(this.textBox1);" />
+      <node column0="(107,27) this.Controls.Add(this.textBox1);" />
+      <node column0="(108,18) this.ForeColor = System.Drawing.Color.Crimson;" />
+      <node column0="(109,18) this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;" />
+      <node column0="(109,73) this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;" />
+      <node column0="(110,18) this.Icon = ((System.Drawing.Icon)(resources.GetObject(&quot;$this.Icon&quot;)));" />
+      <node column0="(111,18) this.Name = &quot;SvoxBot&quot;;" />
+      <node column0="(112,18) this.Text = &quot;SvoxBot&quot;;" />
+      <node column0="(113,23) this.Load += new System.EventHandler(this.Form1_Load);" />
+      <node column0="(115,18) this.ResumeLayout(false);" />
+      <node column0="(116,18) this.PerformLayout();" />
+      <node column0="(122,38) private System.Windows.Forms.TextBox textBox1;" />
+      <node column0="(123,38) private System.Windows.Forms.Button applyButton;" />
+      <node column0="(124,38) private System.Windows.Forms.Button closeButton;" />
+      <node column0="(125,38) private System.Windows.Forms.PictureBox pictureBox1;" />
+      <node column0="(126,38) private System.Windows.Forms.Button button1;" />
+      <node column0="(27,28) MessageBox.Show(&quot;Token Not Set! Please set a token and restart...&quot;);" />
+      <node column0="(40,44) new Thread(() =&gt; new SvoxBot().ShowDialog()).Start();" />
+    </node>
+  </node>
+  <node column0="56 implicit used references">
+    <node column0="Discord.Net.Rpc">
+      <node column0="Discord.Net.Rpc" />
+    </node>
+    <node column0="Discord.Net.Webhook">
+      <node column0="Discord.Net.Webhook" />
+    </node>
+    <node column0="Microsoft.NETCore.Platforms" />
+    <node column0="NETStandard.Library" />
+    <node column0="Newtonsoft.Json">
+      <node column0="Newtonsoft.Json (referenced in: Discord.Net.Rest, Discord.Net.Rpc, Discord.Net.Webhook, Discord.Net.WebSocket)" />
+    </node>
+    <node column0="System.Collections" />
+    <node column0="System.Collections.Concurrent" />
+    <node column0="System.Collections.Immutable">
+      <node column0="System.Collections.Immutable (referenced in: Discord.Net.Commands, Discord.Net.Core, Discord.Net.Rest, Discord.Net.Rpc, Discord.Net.WebSocket)" />
+    </node>
+    <node column0="System.ComponentModel" />
+    <node column0="System.Diagnostics.Debug" />
+    <node column0="System.Diagnostics.DiagnosticSource">
+      <node column0="System.Diagnostics.DiagnosticSource (referenced in: System.Net.Http)" />
+    </node>
+    <node column0="System.Diagnostics.Tools" />
+    <node column0="System.Diagnostics.Tracing" />
+    <node column0="System.Globalization" />
+    <node column0="System.Interactive.Async">
+      <node column0="System.Interactive.Async (referenced in: Discord.Net.Commands, Discord.Net.Core, Discord.Net.Rest, Discord.Net.Rpc, Discord.Net.WebSocket)" />
+    </node>
+    <node column0="System.IO" />
+    <node column0="System.IO.Compression.ZipFile">
+      <node column0="System.IO.Compression.ZipFile" />
+    </node>
+    <node column0="System.Linq" />
+    <node column0="System.Linq.Expressions" />
+    <node column0="System.Net.Http">
+      <node column0="System.Net.Http (referenced in: Discord.Net.Rest)" />
+    </node>
+    <node column0="System.Net.Primitives" />
+    <node column0="System.ObjectModel" />
+    <node column0="System.Reflection" />
+    <node column0="System.Reflection.Extensions" />
+    <node column0="System.Reflection.Primitives" />
+    <node column0="System.Resources.ResourceManager" />
+    <node column0="System.Runtime" />
+    <node column0="System.Runtime.Extensions" />
+    <node column0="System.Runtime.Handles" />
+    <node column0="System.Runtime.InteropServices" />
+    <node column0="System.Runtime.InteropServices.RuntimeInformation">
+      <node column0="System.Runtime.InteropServices.RuntimeInformation" />
+    </node>
+    <node column0="System.Runtime.Numerics" />
+    <node column0="System.Text.Encoding" />
+    <node column0="System.Text.Encoding.Extensions" />
+    <node column0="System.Text.RegularExpressions" />
+    <node column0="System.Threading" />
+    <node column0="System.Threading.Tasks" />
+    <node column0="System.Threading.Timer" />
+    <node column0="System.Xml.ReaderWriter">
+      <node column0="System.Xml.ReaderWriter" />
+    </node>
+    <node column0="System.Xml.XDocument" />
+    <node column0="System.ComponentModel.Composition (referenced in: System.Runtime)" />
+    <node column0="System.Deployment (referenced in: System.Windows.Forms)" />
+    <node column0="System.Linq (referenced in: Discord.Net.Commands, Discord.Net.Webhook, Microsoft.Extensions.DependencyInjection, Microsoft.Extensions.DependencyInjection.Abstractions, System.Collections.Immutable)" />
+    <node column0="System.Linq.Expressions (referenced in: Microsoft.Extensions.DependencyInjection, Microsoft.Extensions.DependencyInjection.Abstractions)" />
+    <node column0="System.Numerics (referenced in: Newtonsoft.Json, System.Core)" />
+    <node column0="System.Xml (referenced in: Newtonsoft.Json, System, System.Core, System.Deployment, System.Windows.Forms, System.Xml.ReaderWriter)" />
+  </node>
+</model>
