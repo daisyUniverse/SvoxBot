@@ -67,7 +67,6 @@ namespace SvoxBot.Modules
             bool errorstate = true;
             string phrase = inputText;
             string[] words = phrase.Split(' ');
-
             
             int count = 0;
 
