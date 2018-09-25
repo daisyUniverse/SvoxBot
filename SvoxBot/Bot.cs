@@ -12,7 +12,7 @@ using NAudio.Wave;
 
 namespace SvoxBot
 {
-    class Program
+    class Bot
     {
         /// <summary>
         /// The main entry point for the application.
@@ -34,7 +34,7 @@ namespace SvoxBot
             else
             {
                 OpenMainWindow();
-                new Program().RunBotAsync().GetAwaiter().GetResult();
+                new Bot().RunBotAsync().GetAwaiter().GetResult();
             }
             
         }
