@@ -13,7 +13,7 @@ namespace SvoxBot.Modules
         [Command("ping")]
         public async Task Test()
         {
-            await ReplyAsync("Hello World!");
+            await ReplyAsync("y");
         }
 
         // Combine the .WAV files
@@ -105,7 +105,7 @@ namespace SvoxBot.Modules
 
         // The actual command
 
-        [Command("s")]
+        [Command("_")]
         public async Task svoxCommand([Remainder] string text)
         {
             
@@ -118,10 +118,12 @@ namespace SvoxBot.Modules
             {
                 processText(words[0], rest, rest);
                 await Context.Channel.SendFileAsync(rest + ".wav");
+                File.AppendAllText("log.txt", Context.User + " : " + rest + System.Environment.NewLine);
             }
             else
             {
                 await ReplyAsync(processText(words[0], rest, rest));
+                File.AppendAllText("log.txt", Context.User + " : " + processText(words[0], rest, rest) + System.Environment.NewLine);
             }
         }
 

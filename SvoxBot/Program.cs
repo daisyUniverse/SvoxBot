@@ -21,6 +21,10 @@ namespace SvoxBot
         [STAThread]
         static void Main(String[] args)
         {
+            if (!File.Exists("prefix.txt"))
+            {
+                File.WriteAllText("prefix.txt","`");
+            }
 
             if (!File.Exists("token.txt"))
             {
@@ -55,7 +59,10 @@ namespace SvoxBot
         {
            string token = File.ReadAllText("token.txt");
 
-            _client = new DiscordSocketClient();
+            _client = new DiscordSocketClient(new DiscordSocketConfig
+            {
+                LogLevel = LogSeverity.Info
+            });
             _commands = new CommandService();
             _services = new ServiceCollection()
                 .AddSingleton(_client)
@@ -68,10 +75,19 @@ namespace SvoxBot
 
             await _client.LoginAsync(TokenType.Bot, botToken);
 
+            _client.Log += Log;
+
             await _client.StartAsync();
 
             await Task.Delay(-1);
 
+        }
+
+        private Task Log(LogMessage message)
+        {
+            string error = message.ToString();
+            File.AppendAllText("log.txt", error + System.Environment.NewLine);
+            return Task.CompletedTask;
         }
 
         public async Task RegisterCommandsAsync()
@@ -83,19 +99,25 @@ namespace SvoxBot
 
         private async Task HandleCommandAsync(SocketMessage arg)
         {
+            
             var message = arg as SocketUserMessage;
 
             if (message is null || message.Author.IsBot) return;
 
-            int argPos = 0; 
+            int argPos = 0;
 
-            if (message.HasStringPrefix("`",ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))
+            string prefix = File.ReadAllText("prefix.txt");
+
+            if (message.HasStringPrefix(prefix,ref argPos) || message.HasMentionPrefix(_client.CurrentUser, ref argPos))
             {
                 var context = new SocketCommandContext(_client, message);
 
                 var result = await _commands.ExecuteAsync(context, argPos, _services);
 
-                if (!result.IsSuccess) { Console.WriteLine("Nah"); }
+                if (!result.IsSuccess) {
+                    string error = "Invalid Command: " + message.ToString() + " by " + message.Author.ToString();
+                    File.AppendAllText("log.txt", error + System.Environment.NewLine);
+                }
             }
         }
     }
