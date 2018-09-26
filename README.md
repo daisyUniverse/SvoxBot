@@ -38,13 +38,14 @@ with something you won't mind typing to trigger the command, for example, I have
 Each generated sound will be saved in the working folder seperately. I'll add the option to overwrite itself later. Just makes it easier to keep hold of good lines, but it is wasteful.
 
 Some notes: 
+- Due to the way that Discord.NET works, this does not support Windows 7 or below
 - You need to make sure you only use .WAV files that have the same bitrate and channels
 - I plan on allowing much more customization, but I thought I would get a more basic version out now rather than later
 
 Some goals:
 - Allow zipped soundpacks
-- custom trigger word
-- GUI Console that logs usage (Steam 2004 look)
+- `custom trigger word` ✅
+- `GUI Console that logs usage (Steam 2004 look)` ✅
 - Reduce the dll usage. I don't know why it's like that. I'm trying to figure it out
 - Ability to show you all the words you messed up instead of just the first one
-- help menu that scans and shows pages of available sounds in a given pack
+- `help menu that scans and shows pages of available sounds in a given pack` ✅
