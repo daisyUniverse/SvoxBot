@@ -1,3 +1,6 @@
+# THIS PROJECT IS DISCONTINUED UNTIL FURTHER NOTICE
+I no longer run windows, and have no real way of working on this. If someone who knows C# wants to fix what's broken with it, by all means, go for it, but as it stands it seems that something in the discord bot API has changed to keep this from working. Hope you understand
+
 # SvoxBot
 A C# Discord bot for Half-Life fans
 
