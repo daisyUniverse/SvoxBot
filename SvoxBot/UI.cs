@@ -21,7 +21,7 @@ namespace SvoxBot
     }
         // Startup Message
         TermLine("Welcome to the Black Mesa Announcement System");
-        TermLine("SvoxBot by Elisha Shaddock");
+        TermLine("SvoxBot by Robin Universe");
         TermLine("");
         TermLine("Current Available Soundpacks: ");
         TermLines(directories);
@@ -101,7 +101,9 @@ namespace SvoxBot
             
             if (Directory.Exists(folder + @"\") && folder != "")
             {
-                TermLines(Directory.GetFiles(folder + @"\"));
+                string soundsfi = String.Join(" | ", Directory.GetFiles(folder + @"\"));
+                string soundsfi2 = soundsfi.Replace(folder + @"\", "'").Replace(".wav","'");
+                TermLine(soundsfi2);
             }
 
             else
@@ -132,6 +134,11 @@ namespace SvoxBot
             TermLine("");
             TermLine("use sounds {foldername} to show all sounds in that pack");
         }
+        else
+        {
+            TermLine(textBox2.Text);
+        }
+        
        textBox2.ResetText(); // Resets box to empty after command entered
     }
 

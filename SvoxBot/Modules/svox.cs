@@ -10,9 +10,26 @@ namespace SvoxBot.Modules
     // Just a ping to see if the bot is working
     public class svox : ModuleBase<SocketCommandContext>
     {
-    [Command("ping")]
-    public async Task Test(){ await ReplyAsync("hewwo"); }
+        [Command("help")]
+        public async Task Test()
+        {
+            await ReplyAsync("**SVOXBOT**: A Bot for Half-Life fans\n" +
+                             "Combines .wav files in the order that you specify, and uploads the file to Discord  \n\n" +
+                             "`!say [soundpack] [words words words]`: Generate a sound file \n" +
+                             "`!packs`: Show installed soundpacks \n" +
+                             "`!sounds [soundpack]`: Show sounds in a soundpack");
+        }
+        
+        [Command("about")]
+        public async Task about()
+        {
+            await ReplyAsync("**SVOXBOT**: A Bot for Half-Life fans\n" +
+                             "Combines .wav files in the order that you specify, and uploads the file to Discord  \n\n" +
+                             "Created by Robin Universe \n" +
+                             "https://github.com/robinuniverse/SvoxBot \n");
+        }
 
+        
     // Combine the .WAV files
     public static void Concatenate(string outputFile, IEnumerable<string> sourceFiles)
     {
@@ -52,6 +69,11 @@ namespace SvoxBot.Modules
             }
         }
     }
+    
+    public async Task ChunksUpto(string str, int maxChunkSize) {
+        for (int i = 0; i < str.Length; i += maxChunkSize) 
+            await ReplyAsync("```" + str.Substring(i, Math.Min(maxChunkSize, str.Length-i)) + "```");
+    }
 
         // Split up the text and format it for the Concatinator to process
         public static string processText(string collection, string inputText, string outputFile)
@@ -89,8 +111,45 @@ namespace SvoxBot.Modules
                 return Error; // Return Error so the command knows not to send a bad file
             }
         }
+        
+        [Command("sounds")]
+        public async Task soundsCommand([Remainder] string text)
+        {
+            string[] words = text.Split(' ');
+            string folder = text.Replace(words[0] + " ", "");
 
-        [Command("_")] // The actual command
+            if (Directory.Exists(folder + @"\") && folder != "")
+            {
+                string sounds = String.Join(", ", Directory.GetFiles(folder + @"\"));
+                string sounds2 = sounds.Replace(folder + @"\", "").Replace(".wav","");
+                if (sounds2.Length > 1950)
+                    ChunksUpto(sounds2, 1950);
+                else
+                {
+                    await ReplyAsync("```python\n" + sounds2 + "```");
+                }
+            } else
+            {
+                await ReplyAsync("Folder not found...");
+            }
+        }
+        
+        [Command("packs")]
+        public async Task packsCommand()
+        {
+            var directories = Directory.GetDirectories(Directory.GetCurrentDirectory());
+            int count = 0;
+            foreach (var strings in directories)
+            {
+                string fundir = directories[count].Substring(directories[count].LastIndexOf(@"\") + 1);
+                directories[count] = fundir;
+                count++;
+            }
+            string packs = String.Join(", ",directories);
+            await ReplyAsync("Current Available Soundpacks: `" + packs + "`");
+        }
+
+        [Command("say")] // The actual command
         public async Task svoxCommand([Remainder] string text)
         {
             string[] words = text.Split(' ');

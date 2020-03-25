@@ -1,6 +1,3 @@
-# THIS PROJECT IS DISCONTINUED UNTIL FURTHER NOTICE
-I no longer run windows, and have no real way of working on this. If someone who knows C# wants to fix what's broken with it, by all means, go for it, but as it stands it seems that something in the discord bot API has changed to keep this from working. Hope you understand
-
 # SvoxBot
 A C# Discord bot for Half-Life fans
 
@@ -13,7 +10,9 @@ A C# Discord bot for Half-Life fans
 3. Extract the SvoxBot zip, and run SvoxBot.exe
 4. Copy your bot Token, enter it into the text box and press 'Save Token'
 5. Restart the program. You should now see the bot in your server
-6. type "sv_ vox test" in your server to test the bot
+6. type "!play vox test" in your server to test the bot
+
+Remember to run !help if you forget anything!
 
 # Demo Video
 
@@ -28,7 +27,7 @@ It's made to be able to recreate the VOX lines from Half-Life
 
 ![alt](https://i.imgur.com/EoRCIrp.png)
 
-syntax: {sv_} { desired wav subfolder } {words, words, words}
+syntax: { !play } { desired wav subfolder } {words, words, words}
 
 In order to use this you need to make your own bot account and get the token.
 You can follow the instructions here to do that https://youtu.be/f7poEyI0lAQ
@@ -36,7 +35,7 @@ You can follow the instructions here to do that https://youtu.be/f7poEyI0lAQ
 Right now all you need to do is to find your desired wav pack (Google is your friend) and extract it into a subfolder
 with something you won't mind typing to trigger the command, for example, I have a HEV folder for the hev lines, so when I want to trigger that I type 
 
-<sv_ hev hiss beep getmedkit>
+<!play hev hiss beep getmedkit>
 
 Each generated sound will be saved in the working folder seperately. I'll add the option to overwrite itself later. Just makes it easier to keep hold of good lines, but it is wasteful.
 

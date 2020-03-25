@@ -23,7 +23,7 @@ namespace SvoxBot
         {
             if (!File.Exists("prefix.txt"))
             {
-                File.WriteAllText("prefix.txt","`");
+                File.WriteAllText("prefix.txt","!");
             }
 
             if (!File.Exists("token.txt"))
@@ -94,7 +94,7 @@ namespace SvoxBot
         {
             _client.MessageReceived += HandleCommandAsync;
 
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
         }
 
         private async Task HandleCommandAsync(SocketMessage arg)
